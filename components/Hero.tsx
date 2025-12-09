@@ -54,50 +54,54 @@ const Hero: React.FC = () => {
            {/* The Giant Envelope Container */}
            <div 
              onClick={handleKnock}
-             className="relative w-64 h-[380px] md:w-80 md:h-[500px] cursor-pointer group transition-all duration-500 hover:scale-105 hover:-rotate-1 z-30 animate-float"
+             className="relative w-64 h-[380px] md:w-80 md:h-[500px] cursor-pointer group z-30 animate-float"
            >
-             {/* Envelope Body */}
-             <div className="absolute inset-0 bg-gradient-to-br from-[#D32F2F] to-[#B71C1C] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[2px] border-[#FFD700] overflow-hidden">
-                
-                {/* Texture/Pattern Overlay */}
-                <div className="absolute inset-0 opacity-40 mix-blend-overlay" style={{backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")'}}></div>
-                <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(#FFC107 1px, transparent 1px)', backgroundSize: '24px 24px'}}></div>
+             {/* Animation Wrapper */}
+             <div className="w-full h-full transition-transform duration-300 group-hover:scale-105 group-hover:animate-hover-shake origin-center">
+               
+               {/* Envelope Body */}
+               <div className="absolute inset-0 bg-gradient-to-br from-[#D32F2F] to-[#B71C1C] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[2px] border-[#FFD700] overflow-hidden">
+                  
+                  {/* Texture/Pattern Overlay */}
+                  <div className="absolute inset-0 opacity-40 mix-blend-overlay" style={{backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")'}}></div>
+                  <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(#FFC107 1px, transparent 1px)', backgroundSize: '24px 24px'}}></div>
 
-                {/* 1. Golden Mountains (Top Background) */}
-                <svg className="absolute top-0 left-0 w-full h-1/2 pointer-events-none opacity-90" viewBox="0 0 100 50" preserveAspectRatio="none">
-                   <defs>
-                     <linearGradient id="mtnGrad" x1="0" y1="0" x2="0" y2="1">
-                       <stop offset="0%" stopColor="#FFD700" stopOpacity="0.6"/>
-                       <stop offset="100%" stopColor="#D32F2F" stopOpacity="0"/>
-                     </linearGradient>
-                   </defs>
-                   <path d="M0,50 L20,10 L40,40 L60,0 L80,30 L100,10 L100,50 Z" fill="url(#mtnGrad)" />
-                   <path d="M0,20 L30,50 L50,20 L70,40 L100,0" fill="none" stroke="#FFD700" strokeWidth="0.2" opacity="0.5"/>
-                </svg>
+                  {/* 1. Golden Mountains (Top Background) */}
+                  <svg className="absolute top-0 left-0 w-full h-1/2 pointer-events-none opacity-90" viewBox="0 0 100 50" preserveAspectRatio="none">
+                     <defs>
+                       <linearGradient id="mtnGrad" x1="0" y1="0" x2="0" y2="1">
+                         <stop offset="0%" stopColor="#FFD700" stopOpacity="0.6"/>
+                         <stop offset="100%" stopColor="#D32F2F" stopOpacity="0"/>
+                       </linearGradient>
+                     </defs>
+                     <path d="M0,50 L20,10 L40,40 L60,0 L80,30 L100,10 L100,50 Z" fill="url(#mtnGrad)" />
+                     <path d="M0,20 L30,50 L50,20 L70,40 L100,0" fill="none" stroke="#FFD700" strokeWidth="0.2" opacity="0.5"/>
+                  </svg>
 
-                {/* 2. CENTER TEXT: CHUC MUNG NAM MOI */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 flex flex-col items-center justify-center space-y-2">
-                   {/* Circle Frame */}
-                   <div className="absolute w-48 h-48 border-[1px] border-[#FFD700]/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                   
-                   <h3 className="text-[#FFD700] font-black text-4xl md:text-5xl uppercase leading-none drop-shadow-md font-sans tracking-tight">
-                      CHÚC<br/>
-                      MỪNG<br/>
-                      NĂM<br/>
-                      MỚI
-                   </h3>
-                   <div className="w-12 h-1 bg-[#FFD700] rounded-full mt-2"></div>
-                </div>
+                  {/* 2. CENTER TEXT: CHUC MUNG NAM MOI */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 flex flex-col items-center justify-center space-y-2">
+                     {/* Circle Frame */}
+                     <div className="absolute w-48 h-48 border-[1px] border-[#FFD700]/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                     
+                     <h3 className="text-[#FFD700] font-black text-4xl md:text-5xl uppercase leading-none drop-shadow-md font-sans tracking-tight">
+                        CHÚC<br/>
+                        MỪNG<br/>
+                        NĂM<br/>
+                        MỚI
+                     </h3>
+                     <div className="w-12 h-1 bg-[#FFD700] rounded-full mt-2"></div>
+                  </div>
 
-                {/* 3. Golden Clouds/Waves (Bottom) */}
-                <svg className="absolute bottom-0 left-0 w-full h-24 md:h-32 text-[#FFD700]" viewBox="0 0 100 40" preserveAspectRatio="none">
-                    <path d="M0,40 L0,20 Q10,10 20,20 Q30,30 40,20 Q50,10 60,20 Q70,30 80,20 Q90,10 100,20 L100,40 Z" fill="#FFA000" opacity="0.4" />
-                    <path d="M0,40 L0,25 Q25,5 50,25 Q75,45 100,25 L100,40 Z" fill="#FFD700" opacity="0.7" />
-                    <path d="M0,40 Q25,30 50,35 Q75,40 100,30 L100,40 Z" fill="#FFECB3" opacity="0.9" />
-                </svg>
+                  {/* 3. Golden Clouds/Waves (Bottom) */}
+                  <svg className="absolute bottom-0 left-0 w-full h-24 md:h-32 text-[#FFD700]" viewBox="0 0 100 40" preserveAspectRatio="none">
+                      <path d="M0,40 L0,20 Q10,10 20,20 Q30,30 40,20 Q50,10 60,20 Q70,30 80,20 Q90,10 100,20 L100,40 Z" fill="#FFA000" opacity="0.4" />
+                      <path d="M0,40 L0,25 Q25,5 50,25 Q75,45 100,25 L100,40 Z" fill="#FFD700" opacity="0.7" />
+                      <path d="M0,40 Q25,30 50,35 Q75,40 100,30 L100,40 Z" fill="#FFECB3" opacity="0.9" />
+                  </svg>
 
-                {/* Top Flap of Envelope */}
-                <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#B71C1C] to-transparent opacity-50 z-10"></div>
+                  {/* Top Flap of Envelope */}
+                  <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#B71C1C] to-transparent opacity-50 z-10"></div>
+               </div>
              </div>
            </div>
         </div>

@@ -51,13 +51,13 @@ export const generateLuckyMoneyWish = async (): Promise<LuckyMoneyResult> => {
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: "Generate a short, funny, 1-sentence Tet wish from a cute onion mascot 'Bé Hành'.",
+      contents: "Hãy tạo một câu chúc Tết ngắn gọn (1 câu duy nhất), hài hước, dễ thương bằng tiếng Việt từ nhân vật mascot 'Bé Hành' (củ hành tây).",
       config: {
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
           properties: {
-            wish: { type: Type.STRING, description: "Short funny Tet wish (max 15 words)." },
+            wish: { type: Type.STRING, description: "Short funny Tet wish in Vietnamese (max 15 words)." },
             amount: { type: Type.STRING, description: "Discount amount (e.g. 10%, 20%)" }
           },
           required: ["wish", "amount"]

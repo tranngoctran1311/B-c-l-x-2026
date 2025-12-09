@@ -112,12 +112,25 @@ const LuckyMoneyModal: React.FC<Props> = ({ isOpen, onClose, data, loading }) =>
                   </div>
                 </div>
 
-                <button 
-                  onClick={handleCopy}
-                  className="bg-[#8D1515] hover:bg-[#a51919] text-[#FFD700] border-2 border-[#FFD700] w-full max-w-xs py-2 md:py-3 rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all active:translate-y-0 font-sans"
-                >
-                  {copied ? 'Đã Sao Chép!' : 'Sao Chép Mã Ngay'}
-                </button>
+                {/* Action Buttons */}
+                <div className="flex flex-col gap-3 w-full max-w-xs">
+                  <button 
+                    onClick={handleCopy}
+                    className="bg-[#8D1515] hover:bg-[#a51919] text-[#FFD700] border-2 border-[#FFD700] w-full py-2 md:py-3 rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all active:translate-y-0 font-sans"
+                  >
+                    {copied ? 'Đã Sao Chép!' : 'Sao Chép Mã Ngay'}
+                  </button>
+
+                  <a 
+                    href="https://nedu.nhi.sg/program-offline/la-chinh-minh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#FFD700] hover:bg-[#FFC107] text-[#8D1515] border-2 border-[#8D1515] w-full py-2 md:py-3 rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all active:translate-y-0 font-sans flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Thanh Toán Ngay
+                  </a>
+                </div>
 
                 <div className="mt-4 text-white/60 text-xs md:text-sm font-medium underline decoration-dotted underline-offset-4 cursor-pointer hover:text-white font-sans">
                   Dùng cho Flash Deal 2/2
